@@ -9,7 +9,6 @@ const WelcomeComponent = () => {
             source={require('../../assets/images/logo.png')} 
             style={{width: 100, height: 100}} 
         />
-        
         <Text style={styles.title}>Millions of Songs.</Text>
         <Text style={styles.title}>Free on Sonique.</Text>
     </View>
