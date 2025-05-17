@@ -7,9 +7,9 @@ import {useNavigation} from "expo-router";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 
 type RootStackParamList = {
-    Welcome: undefined;
-    SignUp: undefined;
-    SignIn: undefined;
+    LoginFormScreen: undefined;
+    HomeScreen: undefined;
+    TabNav: undefined;
 };
 
 
@@ -20,14 +20,17 @@ const LogInScreen = () => {
             <LinearGradient
                 colors={['#E6AF2E', '#FBFFFE']}
                 start={{x: 0, y: 0}}
-                end={{x:1, y:1}}
-                style={{flex: 1, justifyContent:'center'}}
+                end={{x: 1, y: 1}}
+                style={{flex: 1, justifyContent: 'center'}}
             >
                 <WelcomeComponent/>
                 <View style={styles.center}>
-                    <CustomButton title={"Continue with Email"} color={"#001514"} textColor={"#fff"} onPress={() => navigation.navigate("")}/>
-                    <CustomButton title={"Continue with Google"} color={"#E6AF2E"} textColor={"#fff"} onPress={() => navigation.navigate("")}/>
-                    <CustomButton title={"Continue with Facebook"} color={"#E6AF2E"} textColor={"#fff"} onPress={() => navigation.navigate("")}/>
+                    <CustomButton title={"Continue with Email"} color={"#001514"} textColor={"#fff"}
+                                  pressEvent={() => navigation.navigate("LoginFormScreen")} icon={"envelope"}/>
+                    <CustomButton title={"Continue with Google"} color={"#E6AF2E"} textColor={"#fff"}
+                                  pressEvent={() => navigation.navigate("TabNav")} icon={"google"}/>
+                    <CustomButton title={"Continue with Facebook"} color={"#E6AF2E"} textColor={"#fff"}
+                                  pressEvent={() => navigation.navigate("TabNav")} icon={"facebook"}/>
                 </View>
             </LinearGradient>
         </View>
@@ -38,12 +41,17 @@ const styles = StyleSheet.create(
     {
         view: {
             flex: 1,
+            width: '100%',
         },
         center: {
             justifyContent: 'center',
             alignItems: 'center',
+            paddingHorizontal: 20,
             gap: 15,
-            marginTop: 45
+            marginTop: 45,
+            width: "100%",
         }
     }
 )
+
+

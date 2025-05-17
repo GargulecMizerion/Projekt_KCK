@@ -12,7 +12,6 @@ const WelcomeComponent = () => {
         />
         <Text style={styles.title}>Millions of Songs.</Text>
         <Text style={styles.title}>Free on Sonique.</Text>
-        <CustomButton title='Sign In' color='white'></CustomButton>
     </View>
   )
 }

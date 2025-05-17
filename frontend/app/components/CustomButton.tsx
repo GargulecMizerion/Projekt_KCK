@@ -1,31 +1,46 @@
-import { Button, Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {Button, Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 interface CustomButtonProps {
     title: string;
-    color: string
-    //icon:
+    color: string;
+    textColor: string;
+    pressEvent: () => void;
+    icon?: string;
 }
 
 const {width} = Dimensions.get("window");
 
-const CustomButton: React.FC<CustomButtonProps> = ({title, color}) => {
-  return (
-    <View style={{...(styles.button), backgroundColor: color}} >
-        <TouchableOpacity style={{flex: 1}}>
-            <Text>{title}</Text>
+const CustomButton: React.FC<CustomButtonProps> = ({title, color, textColor, pressEvent, icon}) => {
+    return (
+        <TouchableOpacity style={{width: "100%"}} onPress={pressEvent}>
+            <View style={{...styles.button, backgroundColor: color}}>
+                <View style={{position: "absolute", left: 20}}>
+                {
+                    icon ? <Icon name={icon} color={textColor} size={20}/> : null
+                }
+                </View>
+                <Text style={{...styles.textStyle, color: textColor}}>{title}</Text>
+            </View>
         </TouchableOpacity>
-    </View>
-  )
+    )
 }
 
 export default CustomButton
 
 const styles = StyleSheet.create({
     button: {
-        width: width * 0.8,
+        width: '100%',
         height: 50,
-        padding: 10,
-        margin: 10
+        borderRadius: 5,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    textStyle: {
+        fontSize: 18,
+        color: "white",
     }
 })
