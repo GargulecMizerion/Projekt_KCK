@@ -1,12 +1,12 @@
 import {Image, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
-interface PinnedComponentProps {
+interface PinnedItemProps {
     image: any;
     title: string;
 }
 
-const PinnedComponent: React.FC<PinnedComponentProps> = ({image, title}) => {
+const PinnedItem: React.FC<PinnedItemProps> = ({image, title}) => {
     return (
         <View style={styles.main}>
             <Image style={styles.imageStyle} source={image}/>
@@ -14,7 +14,7 @@ const PinnedComponent: React.FC<PinnedComponentProps> = ({image, title}) => {
         </View>
     )
 }
-export default PinnedComponent
+export default PinnedItem
 const styles = StyleSheet.create({
     main: {
         flexGrow: 1,

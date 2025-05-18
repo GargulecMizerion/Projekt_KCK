@@ -14,7 +14,6 @@ const HomeHeader = () => {
                     <Text style={{color: "white"}}>SS</Text>
                 </View>
             </View>
-            <Line/>
         </View>
     )
 }
