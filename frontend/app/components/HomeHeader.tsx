@@ -1,14 +1,23 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
-import Line from "@/app/components/Line";
 
-const HomeHeader = () => {
+interface HomeHeaderProps {
+    title?: string
+}
+
+const HomeHeader: React.FC<HomeHeaderProps> = ({title}) => {
     return (
         <View style={styles.main}>
             <View style={styles.row}>
                 <View>
-                    <Text style={styles.text}>Witaj,</Text>
-                    <Text style={styles.text}>SuperSłuchacz69</Text>
+                    {
+                        title ? <Text style={{...styles.text, lineHeight: 72}}>{title}</Text> :
+                            <>
+                                <Text style={styles.text}>Witaj,</Text>
+                                <Text style={styles.text}>SuperSłuchacz69</Text>
+                            </>
+                    }
+
                 </View>
                 <View style={styles.profilePic}>
                     <Text style={{color: "white"}}>SS</Text>
@@ -38,6 +47,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     text: {
+        lineHeight: 36,
         fontSize: 30,
         fontWeight: "bold",
     }

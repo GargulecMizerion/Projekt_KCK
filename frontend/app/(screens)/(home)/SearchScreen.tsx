@@ -15,7 +15,7 @@ const SearchScreen = () => {
                 <HomeHeader/>
                 <Line/>
                 <View style={styles.container}>
-                    <SearchBar/>
+                    <SearchBar placeholder={"What do You want to listen to?"}/>
                 </View>
                 <Line/>
                 <RecentSearchList/>

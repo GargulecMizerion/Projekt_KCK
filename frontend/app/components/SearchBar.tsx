@@ -2,11 +2,15 @@ import {StyleSheet, TextInput, View} from 'react-native'
 import React from 'react'
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const SearchBar = () => {
+interface SearchBarProps {
+    placeholder: string,
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({placeholder}) => {
     return (
         <View style={styles.main}>
             <Icon size={26} name={"search"}/>
-            <TextInput placeholder={"What do You want to listen to?"}></TextInput>
+            <TextInput placeholder={placeholder}></TextInput>
         </View>
     )
 }
