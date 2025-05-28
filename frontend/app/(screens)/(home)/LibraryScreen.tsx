@@ -23,7 +23,7 @@ const LibraryScreen = () => {
                     <OptionsBar left={<Left/>} right={<Right/>}/>
                 </View>
                 <Line/>
-                <LibraryList/>
+                <LibraryList list={libraryData}/>
             </ScrollView>
             <BottomPlayer/>
         </BackgroundComponent>
@@ -73,5 +73,29 @@ const Right = () => {
         </View>
     )
 }
+
+const libraryData = [
+    {
+        id: '1',
+        image: require('../../../assets/images/audi.jpg'),
+        title: 'Playlista do auta',
+        type: 'Playlista',
+        author: 'SuperSłuchacz69'
+    },
+    {
+        id: '2',
+        image: require('../../../assets/images/Rockst4r.jpg'),
+        title: 'Rockst4r ',
+        type: 'Album',
+        author: 'White2115'
+    },
+    {
+        id: '3',
+        image: require('../../../assets/images/maryla.jpg'),
+        title: 'The best of Maryla Rodowicz',
+        type: 'Playlista',
+        author: 'Sonique'
+    },
+];
 
 

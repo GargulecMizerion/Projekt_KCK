@@ -1,9 +1,7 @@
-import {StyleSheet, View, Text} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import React from 'react'
-import {LinearGradient} from 'expo-linear-gradient'
 import WelcomeComponent from '../components/WelcomeComponent'
 import CustomButton from "@/app/components/CustomButton";
-import {navigate} from "expo-router/build/global-state/routing";
 import {useNavigation} from "expo-router";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import BackgroundComponent from "@/app/components/BackgroundComponent";
@@ -12,6 +10,7 @@ type RootStackParamList = {
     Welcome: undefined;
     SignUp: undefined;
     SignIn: undefined;
+    Playlist: undefined;
 };
 
 
@@ -23,7 +22,7 @@ const WelcomeScreen = () => {
             <WelcomeComponent/>
             <View style={styles.center}>
                 <CustomButton title={"Sign Up"} color={"#001514"} textColor={"#fff"}
-                              pressEvent={() => navigation.navigate("SignUp")
+                              pressEvent={() => navigation.navigate("Playlist")
                               }/>
                 <CustomButton title={"Log In"} color={"#E6AF2E"} textColor={"#fff"}
                               pressEvent={() => navigation.navigate("SignIn")}/>

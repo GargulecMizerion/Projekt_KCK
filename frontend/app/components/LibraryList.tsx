@@ -2,34 +2,23 @@ import {StyleSheet, View} from 'react-native'
 import React from 'react'
 import LibraryItem from "@/app/components/LibraryItem";
 
-const libraryData = [
-    {
-        id: '1',
-        image: require('../../assets/images/audi.jpg'),
-        title: 'Playlista do auta',
-        type: 'Playlista',
-        author: 'SuperSłuchacz69'
-    },
-    {
-        id: '2',
-        image: require('../../assets/images/Rockst4r.jpg'),
-        title: 'Rockst4r ',
-        type: 'Album',
-        author: 'White2115'
-    },
-    {
-        id: '3',
-        image: require('../../assets/images/maryla.jpg'),
-        title: 'The best of Maryla Rodowicz',
-        type: 'Playlista',
-        author: 'Sonique'
-    },
-];
+interface LibraryItemData {
+    id: string;
+    title: string;
+    author: string;
+    type?: string;
+    image: string;
+}
 
-const LibraryList = () => {
+interface LibraryListProps {
+    list: LibraryItemData[];
+}
+
+
+const LibraryList: React.FC<LibraryListProps> = ({list}) => {
     return (
         <View style={styles.main}>
-            {libraryData.map((item) => (
+            {list.map((item) => (
                 <LibraryItem key={item.id} title={item.title} author={item.author} type={item.type} image={item.image} />
             ))}
         </View>

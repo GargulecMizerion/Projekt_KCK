@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from "expo-router/build/fork/native-stack/cr
 import LogInScreen from "@/app/(screens)/LogInScreen";
 import LoginFormScreen from "@/app/(screens)/LoginFormScreen";
 import BottomTabNavigator from "@/app/(screens)/BottomTabNav";
+import PlaylistScreen from "@/app/(screens)/PlaylistScreen";
 
 type RootStackParamList = {
     Welcome: undefined;
@@ -13,6 +14,7 @@ type RootStackParamList = {
     LoginFormScreen: undefined;
     HomeScreen: undefined;
     TabNav: undefined;
+    Playlist: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +28,7 @@ export default function Index() {
                 <Stack.Screen name="SignIn" component={LogInScreen}/>
                 <Stack.Screen name="LoginFormScreen" component={LoginFormScreen}/>
                 <Stack.Screen name="TabNav" component={BottomTabNavigator}/>
+                <Stack.Screen name="Playlist" component={PlaylistScreen}/>
                 {/* Tutaj nawigacja Bottom Nav*/}
             </Stack.Navigator>
         </SafeAreaProvider>

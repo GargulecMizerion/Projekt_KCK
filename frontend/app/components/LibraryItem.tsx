@@ -4,7 +4,7 @@ import React from 'react'
 interface LibraryItemProps {
     image: any,
     title: string,
-    type: string,
+    type?: string,
     author: string,
 }
 
@@ -14,7 +14,7 @@ const LibraryItem: React.FC<LibraryItemProps> = ({image, title, type, author}) =
             <Image source={image} style={styles.image}/>
             <View style={styles.container}>
                 <Text style={styles.title}>{title}</Text>
-                <Text style={styles.info}>{type} - {author}</Text>
+                <Text style={styles.info}>{type ? type + " - " : ""}{author}</Text>
             </View>
         </View>
     )
