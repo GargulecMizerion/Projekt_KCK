@@ -6,6 +6,7 @@ import LogInScreen from "@/app/(screens)/LogInScreen";
 import LoginFormScreen from "@/app/(screens)/LoginFormScreen";
 import BottomTabNavigator from "@/app/(screens)/BottomTabNav";
 import PlaylistScreen from "@/app/(screens)/PlaylistScreen";
+import PlayerScreen from "@/app/(screens)/PlayerScreen";
 
 type RootStackParamList = {
     Welcome: undefined;
@@ -15,6 +16,7 @@ type RootStackParamList = {
     HomeScreen: undefined;
     TabNav: undefined;
     Playlist: undefined;
+    Player: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +31,7 @@ export default function Index() {
                 <Stack.Screen name="LoginFormScreen" component={LoginFormScreen}/>
                 <Stack.Screen name="TabNav" component={BottomTabNavigator}/>
                 <Stack.Screen name="Playlist" component={PlaylistScreen}/>
+                <Stack.Screen name="Player" component={PlayerScreen}/>
                 {/* Tutaj nawigacja Bottom Nav*/}
             </Stack.Navigator>
         </SafeAreaProvider>

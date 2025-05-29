@@ -11,6 +11,7 @@ type RootStackParamList = {
     SignUp: undefined;
     SignIn: undefined;
     Playlist: undefined;
+    Player: undefined;
 };
 
 
@@ -22,7 +23,7 @@ const WelcomeScreen = () => {
             <WelcomeComponent/>
             <View style={styles.center}>
                 <CustomButton title={"Sign Up"} color={"#001514"} textColor={"#fff"}
-                              pressEvent={() => navigation.navigate("Playlist")
+                              pressEvent={() => navigation.navigate("Player")
                               }/>
                 <CustomButton title={"Log In"} color={"#E6AF2E"} textColor={"#fff"}
                               pressEvent={() => navigation.navigate("SignIn")}/>
