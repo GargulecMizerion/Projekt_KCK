@@ -11,8 +11,6 @@ interface CustomButtonProps {
     icon?: string;
 }
 
-const {width} = Dimensions.get("window");
-
 const CustomButton: React.FC<CustomButtonProps> = ({title, color, textColor, pressEvent, icon}) => {
     return (
         <TouchableOpacity style={{width: "100%"}} onPress={pressEvent}>

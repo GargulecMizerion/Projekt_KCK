@@ -12,7 +12,7 @@ const BottomPlayer = () => {
             flexDirection: "row",
             gap: 7
         }}>
-            <Image source={require('../../assets/images/poolparty.jpg')} style={{width: 50, height: 50}}/>
+            <Image source={require('../../../assets/images/poolparty.jpg')} style={{width: 50, height: 50}}/>
             <View style={styles.info}>
                 <Text style={[styles.text, styles.title]}>Pool Party</Text>
                 <Text style={[styles.text, styles.author]}>Teenz</Text>
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
         position: "fixed",
         flexDirection: "row",
-        gap: 7},
+        gap: 7
+    },
     info: {
         flex: 1,
     },

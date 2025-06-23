@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image, StyleSheet, Dimensions, Text, TouchableOpacity} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
-import BackgroundComponent from "@/app/components/BackgroundComponent";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
 import {router} from "expo-router";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -19,7 +19,7 @@ const PlayerScreen = () => {
                     <Text style={styles.title}>Rockst4r</Text>
                     <Image
                         style={{...styles.image, height: imageHeight}}
-                        source={require('../../assets/images/Rockst4r.jpg')}
+                        source={require('@/assets/images/Rockst4r.jpg')}
                         resizeMode="cover"
                     />
 

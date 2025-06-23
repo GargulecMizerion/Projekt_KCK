@@ -1,17 +1,14 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
-import WelcomeComponent from '../components/WelcomeComponent'
-import CustomButton from "@/app/components/CustomButton";
+import WelcomeComponent from '../components/welcome/WelcomeComponent'
+import CustomButton from "@/app/components/general/CustomButton";
 import {useNavigation} from "expo-router";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import BackgroundComponent from "@/app/components/BackgroundComponent";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
 
 type RootStackParamList = {
-    Welcome: undefined;
     SignUp: undefined;
     SignIn: undefined;
-    Playlist: undefined;
-    Player: undefined;
 };
 
 
@@ -23,7 +20,7 @@ const WelcomeScreen = () => {
             <WelcomeComponent/>
             <View style={styles.center}>
                 <CustomButton title={"Sign Up"} color={"#001514"} textColor={"#fff"}
-                              pressEvent={() => navigation.navigate("Player")
+                              pressEvent={() => navigation.navigate("SignUp")
                               }/>
                 <CustomButton title={"Log In"} color={"#E6AF2E"} textColor={"#fff"}
                               pressEvent={() => navigation.navigate("SignIn")}/>

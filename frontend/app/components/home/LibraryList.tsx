@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
-import LibraryItem from "@/app/components/LibraryItem";
+import LibraryItem from "@/app/components/home/LibraryItem";
 
 interface LibraryItemData {
     id: string;

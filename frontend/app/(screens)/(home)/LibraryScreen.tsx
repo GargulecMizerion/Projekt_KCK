@@ -1,15 +1,32 @@
 import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
-import BackgroundComponent from "@/app/components/BackgroundComponent";
-import HomeHeader from "@/app/components/HomeHeader";
-import Line from "@/app/components/Line";
-import SearchBar from "@/app/components/SearchBar";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
+import HomeHeader from "@/app/components/home/HomeHeader";
+import Line from "@/app/components/home/Line";
+import SearchBar from "@/app/components/home/SearchBar";
 import Icon from "react-native-vector-icons/FontAwesome";
-import OptionsBar from "@/app/components/OptionsBar";
-import LibraryList from "@/app/components/LibraryList";
-import BottomPlayer from "@/app/components/BottomPlayer";
+import OptionsBar from "@/app/components/home/OptionsBar";
+import LibraryList from "@/app/components/home/LibraryList";
+import BottomPlayer from "@/app/components/home/BottomPlayer";
+import {libraryData} from "@/assets/Data";
+import {useNavigation} from "expo-router";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+
+type RootStackParamList = {
+    Welcome: undefined;
+    SignUp: undefined;
+    SignIn: undefined;
+    LoginFormScreen: undefined;
+    HomeScreen: undefined;
+    TabNav: undefined;
+    Playlist: undefined;
+    Player: undefined;
+    "(screens)/PlayerScreen": undefined;
+};
 
 const LibraryScreen = () => {
+    const navigation = useNavigation();
+    const parentNavigation = navigation.getParent<NativeStackNavigationProp<RootStackParamList>>();
     return (
         <BackgroundComponent>
             <ScrollView>
@@ -25,7 +42,9 @@ const LibraryScreen = () => {
                 <Line/>
                 <LibraryList list={libraryData}/>
             </ScrollView>
-            <BottomPlayer/>
+            <TouchableOpacity onPress={() => parentNavigation?.navigate("(screens)/PlayerScreen")}>
+                <BottomPlayer />
+            </TouchableOpacity>
         </BackgroundComponent>
     )
 }
@@ -74,28 +93,5 @@ const Right = () => {
     )
 }
 
-const libraryData = [
-    {
-        id: '1',
-        image: require('../../../assets/images/audi.jpg'),
-        title: 'Playlista do auta',
-        type: 'Playlista',
-        author: 'SuperSłuchacz69'
-    },
-    {
-        id: '2',
-        image: require('../../../assets/images/Rockst4r.jpg'),
-        title: 'Rockst4r ',
-        type: 'Album',
-        author: 'White2115'
-    },
-    {
-        id: '3',
-        image: require('../../../assets/images/maryla.jpg'),
-        title: 'The best of Maryla Rodowicz',
-        type: 'Playlista',
-        author: 'Sonique'
-    },
-];
 
 

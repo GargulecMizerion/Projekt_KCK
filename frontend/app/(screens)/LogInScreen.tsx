@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 import {LinearGradient} from "expo-linear-gradient";
-import WelcomeComponent from "@/app/components/WelcomeComponent";
-import CustomButton from "@/app/components/CustomButton";
+import WelcomeComponent from "@/app/components/welcome/WelcomeComponent";
+import CustomButton from "@/app/components/general/CustomButton";
 import {useNavigation} from "expo-router";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 

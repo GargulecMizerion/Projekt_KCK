@@ -1,11 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
-import WelcomeComponent from "@/app/components/WelcomeComponent";
-import CustomButton from "@/app/components/CustomButton";
+import WelcomeComponent from "@/app/components/welcome/WelcomeComponent";
+import CustomButton from "@/app/components/general/CustomButton";
 import {LinearGradient} from "expo-linear-gradient";
 import {router, useNavigation} from "expo-router";
 import {NativeStackNavigationProp} from "@react-navigation/native-stack";
-import BackgroundComponent from "@/app/components/BackgroundComponent";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
 
 type RootStackParamList = {
     Welcome: undefined;

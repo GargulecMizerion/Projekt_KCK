@@ -1,19 +1,11 @@
 import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, Dimensions, View} from 'react-native'
 import React from 'react'
-import BackgroundComponent from "@/app/components/BackgroundComponent";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
 import {router} from "expo-router";
 import Icon from "react-native-vector-icons/FontAwesome";
-import Line from "@/app/components/Line";
-import OptionsBar from "@/app/components/OptionsBar";
-import LibraryList from "@/app/components/LibraryList";
-
-const object = {
-    id: '1',
-    image: require('../../assets/images/audi.jpg'),
-    title: 'Playlista do auta',
-    type: 'Playlista',
-    author: 'SuperSłuchacz69'
-}
+import Line from "@/app/components/home/Line";
+import OptionsBar from "@/app/components/home/OptionsBar";
+import LibraryList from "@/app/components/home/LibraryList";
 
 const PlaylistScreen = () => {
     const width = Dimensions.get('window').width;
@@ -24,7 +16,7 @@ const PlaylistScreen = () => {
                     <TouchableOpacity style={styles.arrow} onPress={() => router.back()}>
                         <Icon name="arrow-left" color={"black"} size={18}/>
                     </TouchableOpacity>
-                    <Image source={object.image} style={{...styles.image, width: width * 0.6, height: width * 0.6}}/>
+                    <Image source={require("D:\\Studia\\sonique\\Projekt_KCK\\frontend\\assets\\images\\maryla.jpg")} style={{...styles.image, width: width * 0.6, height: width * 0.6}}/>
                     <View style={styles.info}>
                         <Text style={styles.title}>Playlista do auta</Text>
                         <View style={styles.creator}>

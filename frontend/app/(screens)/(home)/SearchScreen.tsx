@@ -1,14 +1,30 @@
-import {ScrollView, StyleSheet, View} from 'react-native'
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native'
 import React from 'react'
-import BackgroundComponent from "@/app/components/BackgroundComponent";
-import HomeHeader from "@/app/components/HomeHeader";
-import Line from "@/app/components/Line";
-import SearchBar from "@/app/components/SearchBar";
-import RecentSearchList from "@/app/components/RecentSearchList";
-import RecommendedCategoriesList from "@/app/components/RecommendedCategoriesList";
-import BottomPlayer from "@/app/components/BottomPlayer";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
+import HomeHeader from "@/app/components/home/HomeHeader";
+import Line from "@/app/components/home/Line";
+import SearchBar from "@/app/components/home/SearchBar";
+import RecentSearchList from "@/app/components/home/RecentSearchList";
+import RecommendedCategoriesList from "@/app/components/home/RecommendedCategoriesList";
+import BottomPlayer from "@/app/components/home/BottomPlayer";
+import {useNavigation} from "expo-router";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
+
+type RootStackParamList = {
+    Welcome: undefined;
+    SignUp: undefined;
+    SignIn: undefined;
+    LoginFormScreen: undefined;
+    HomeScreen: undefined;
+    TabNav: undefined;
+    Playlist: undefined;
+    Player: undefined;
+    "(screens)/PlayerScreen": undefined;
+};
 
 const SearchScreen = () => {
+    const navigation = useNavigation();
+    const parentNavigation = navigation.getParent<NativeStackNavigationProp<RootStackParamList>>();
     return (
         <BackgroundComponent>
             <ScrollView style={styles.main}>
@@ -22,7 +38,9 @@ const SearchScreen = () => {
                 <Line/>
                 <RecommendedCategoriesList/>
             </ScrollView>
-            <BottomPlayer/>
+            <TouchableOpacity onPress={() => parentNavigation?.navigate("(screens)/PlayerScreen")}>
+                <BottomPlayer />
+            </TouchableOpacity>
         </BackgroundComponent>
     )
 }

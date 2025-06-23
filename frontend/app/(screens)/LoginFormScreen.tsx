@@ -1,10 +1,10 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
-import AuthForm from "@/app/components/AuthForm";
-import BackgroundComponent from "@/app/components/BackgroundComponent";
+import AuthForm from "@/app/components/welcome/AuthForm";
+import BackgroundComponent from "@/app/components/general/BackgroundComponent";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {router} from "expo-router";
-import CustomButton from "@/app/components/CustomButton";
+import CustomButton from "@/app/components/general/CustomButton";
 
 const LoginFormScreen = () => {
     return (

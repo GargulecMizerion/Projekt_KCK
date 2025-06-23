@@ -19,6 +19,7 @@ export default function TabsLayout() {
                 name="SettingsScreen"
                 options={{title: 'USTAWIENIA', tabBarIcon: () => null}}
             />
+
         </Tabs>
     );
 }

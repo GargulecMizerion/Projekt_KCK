@@ -19,6 +19,13 @@ type RootStackParamList = {
     Player: undefined;
 };
 
+import { LogBox } from 'react-native';
+
+// Ignoruj konkretny warning
+LogBox.ignoreLogs([
+    'VirtualizedLists should never be nested inside plain ScrollViews',
+]);
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function Index() {
@@ -32,7 +39,6 @@ export default function Index() {
                 <Stack.Screen name="TabNav" component={BottomTabNavigator}/>
                 <Stack.Screen name="Playlist" component={PlaylistScreen}/>
                 <Stack.Screen name="Player" component={PlayerScreen}/>
-                {/* Tutaj nawigacja Bottom Nav*/}
             </Stack.Navigator>
         </SafeAreaProvider>
     );
